@@ -1,0 +1,10 @@
+laranja;limão;maçã;uva;pimentão
+leite;queijo;feijão;banana;amendoim
+cebola;laranja;maçã;batata;limão 
+laranja,limão,maçã;cebola;salada
+beringela;ovo;uva
+cenoura;salada;manteiga
+laranja;limão;maçã;uva;banana;cebola;beringeja;cenoura;pimentão;salada
+laranja;limão;maçã;uva;banana;cebola;beringeja;cenoura;pimentão;salada;cereal
+peixes;nozes;cenoura;laranja;limão;feijão;amendoim;avelã
+pimentão;nozes;avelã;amendoim;salada;laranja;limão

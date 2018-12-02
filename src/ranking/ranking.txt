@@ -1,0 +1,7 @@
+0;be;Construtores
+400;leo;Construtores
+600;oi;energeticos
+500;lklkl;Reguladores
+200;qdsaksd´as;Reguladores
+100;kaskdkas;Energeticos
+200;asdasd;Construtores

@@ -1,0 +1,10 @@
+pão;batata;cerveja;cereal;chocolate;refrigerante
+pão;batata;cerveja;cereal;manteiga;azeite;chocolate;refrigerante
+pão;batata;cereal;chocolate;refrigerante
+chocolate;refrigerante
+cenoura;azeite;laranja;limão;maçã;peixes;salada
+pão;batata;cereal;refrigerante;chocolate
+pão;batata;cereal;refrigerante;chocolate
+refrigerante;chocolate
+manteiga;uva
+laranja;limão;cenoura;azeite;nozes;uva;beringela;manteiga
