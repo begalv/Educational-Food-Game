@@ -298,13 +298,7 @@ def gameDisplay():
             foods = getNFoods(4, alimento.energeticos)
             question, answer = alimento.getQuestion('energPerg', 'energResp')
 
-        for i in range(0,5): #fazer uma lista com as posições sorteadas (alimenyo[0].x) e apenas um while para sortear novas posições se a nova posição estiver na lista
-            while (foods[0].x + foods[0].w) >= foods[1].x and foods[0].x <= (foods[1].x + foods[1].w)  or (foods[0].x + foods[0].w) >= foods[2].x and foods[0].x <= (foods[2].x + foods[2].w) or (foods[0].x + foods[0].w) >= foods[3].x and foods[0].x <= (foods[3].x + foods[3].w):
-                foods[0].x = alimento.getX()
-            while (foods[1].x + foods[1].w) >= foods[2].x and foods[1].x <= (foods[2].x + foods[2].w) or (foods[1].x + foods[1].w) >= foods[3].x and foods[1].x <= (foods[3].x + foods[3].w):
-                foods[1].x = alimento.getX()
-            while(foods[2].x + foods[2].w) >= foods[3].x and foods[2].x <= (foods[3].x + foods[3].w):
-                foods[2].x = alimento.getX()
+        alimento.checkX(foods)
 
         fallingImg(foods) #alimento[0].nome etc
         if chances == 0:

@@ -22,6 +22,17 @@ class alimento:
         x = random.randint(64 , (700 - 64))
         return x
 
+    def checkX(foods):
+        for i in range(5):
+            for food in foods:
+                index = foods.index(food)
+                foods.pop(index)
+                for f in foods:
+                    for i in range(food.x, food.x + food.w +1):
+                        if i == f.x or i == f.x + f.w:
+                            food.x = alimento.getX()
+                foods.insert(index, food)
+
     def draw(window, img, x, y, scale):
         img1 = pygame.transform.scale(img, (scale,scale))
         window.blit(img1, (x, y))
@@ -53,7 +64,7 @@ class alimento:
     class reguladores:
 
         def __init__(self, nome, x):
-            listaRegu = [['salada', pygame.image.load('imagens/salada.png')], ['banana', pygame.image.load('imagens/banana.png')], ['cenoura', pygame.image.load('imagens/cenoura.png')], ['beringela', pygame.image.load('imagens/berinjela.png')], ['cebola', pygame.image.load('imagens/cebola.png')], ['laranja', pygame.image.load('imagens/laranja.png')], ['limão', pygame.image.load('imagens/limão.png')], ['maçã', pygame.image.load('imagens/maçã.png')], ['imagens/pimentão.png'], ['uva', pygame.image.load('imagens/uva.png')]]
+            listaRegu = [['salada', pygame.image.load('imagens/salada.png')], ['banana', pygame.image.load('imagens/banana.png')], ['cenoura', pygame.image.load('imagens/cenoura.png')], ['beringela', pygame.image.load('imagens/berinjela.png')], ['cebola', pygame.image.load('imagens/cebola.png')], ['laranja', pygame.image.load('imagens/laranja.png')], ['limão', pygame.image.load('imagens/limão.png')], ['maçã', pygame.image.load('imagens/maçã.png')], ['pimentão', pygame.image.load('imagens/pimentão.png')], ['uva', pygame.image.load('imagens/uva.png')]]
             self.nome, self.img = nome(listaRegu)
             self.x = x()
             self.w = 64
