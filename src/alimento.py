@@ -22,6 +22,10 @@ class alimento:
         x = random.randint(64 , (700 - 64))
         return x
 
+    def draw(window, img, x, y, scale):
+        img1 = pygame.transform.scale(img, (scale,scale))
+        window.blit(img1, (x, y))
+
     def getQuestion(tipoP, tipoR):
         perg = open("perguntas/{}.txt".format(tipoP), "r")
         resp = open("perguntas/{}.txt".format(tipoR), "r")
@@ -59,7 +63,7 @@ class alimento:
     class energeticos:
 
         def __init__(self, nome, x):
-            listaEnerg = [['pão', pygame.image.load('imagens/pão.png')], ['cerveja', pygame.image.load('imagens/breja.png')], ['refrigerante', pygame.image.load('imagens/coca.png')], ['cereal', pygame.image.load('imagens/cereal.png')], ['chocolate', pygame.image.load('imagens/chocolate.png')], ['azeite', pygame.image.load('imagens/azeite.png')], ['batata', pygame.image.load('imagen/batata.png')], ['farinha', pygame.image.load('imagens/farinha.png')], ['manteiga', pygame.image.load('imagens/mantega.png')]]
+            listaEnerg = [['pão', pygame.image.load('imagens/pão.png')], ['cerveja', pygame.image.load('imagens/breja.png')], ['refrigerante', pygame.image.load('imagens/coca.png')], ['cereal', pygame.image.load('imagens/cereal.png')], ['chocolate', pygame.image.load('imagens/chocolate.png')], ['azeite', pygame.image.load('imagens/azeite.png')], ['batata', pygame.image.load('imagens/batata.png')], ['farinha', pygame.image.load('imagens/farinha.png')], ['manteiga', pygame.image.load('imagens/mantega.png')]]
             self.nome, self.img = nome(listaEnerg)
             self.x = x()
             self.w = 64

@@ -144,8 +144,6 @@ def gameRanking():
 
         win.fill((192,192,192))
 
-
-
 def gameIntro():
     global theme
     global chances
@@ -219,7 +217,7 @@ def gameOver():
 
         pygame.display.update()
 
-def objClicked(nome, x, img):
+def foodClicked(nome, x, img, w, h):
     global pontos
     global chances
     pos = pygame.mouse.get_pos()
@@ -233,7 +231,7 @@ def objClicked(nome, x, img):
         return True
     return False
 
-def fallingImg(nome1, x1, img1, nome2 ,x2, img2, nome3, x3, img3, nome4, x4, img4):
+def fallingImg(foods):
     global y
     for y in range(110, 480, vel):
         for ev in pygame.event.get():
@@ -241,19 +239,10 @@ def fallingImg(nome1, x1, img1, nome2 ,x2, img2, nome3, x3, img3, nome4, x4, img
                 pygame.quit()
                 quit()
             if ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1:
-                click1 = objClicked(nome1, x1, img1)
-                click2 = objClicked(nome2, x2, img2)
-                click3 = objClicked(nome3, x3, img3)
-                click4 = objClicked(nome4, x4, img4)
-                if click1 == True:
-                    nome1 = 'del'
-                elif click2 == True:
-                    nome2 = 'del'
-                elif click3 == True:
-                    nome3 = 'del'
-                elif click4 == True:
-                    nome4 = 'del'
-
+                for food in foods:
+                    click = foodClicked(food.nome, food.x, food.img, food.w, food.h)
+                    if click == True:
+                        food.nome = 'del'
 
         win.fill((192,192,192))
 
@@ -272,27 +261,21 @@ def fallingImg(nome1, x1, img1, nome2 ,x2, img2, nome3, x3, img3, nome4, x4, img
         chancesRect.center = (((disWidth/2)-190), (disHeight - 399))
         win.blit(chancesSurf, chancesRect)
 
-        img1 = pygame.transform.scale(img1, (64,64))
-        img2 = pygame.transform.scale(img2, (64,64))
-        img3 = pygame.transform.scale(img3, (64,64))
-        img4 = pygame.transform.scale(img4, (64,64))
+        for food in foods:
+            alimento.draw(win, food.img, food.x, y, 64)
 
         pygame.time.delay(10)
-        win.blit(img1, (x1, y))
-        win.blit(img2, (x2, y))
-        win.blit(img3, (x3, y))
-        win.blit(img4, (x4, y))
-        if chances == 0 or nome1 == 'del' and nome2 == 'del' and nome3 == 'del' and nome4 == 'del':
-            break
-
         pygame.display.update()
 
-def get4Alis(classe):
-    ali = alimento(alimento.getAli, alimento.getX) #transformar em lista alimentos
-    ali2 = alimento(alimento.getAli, alimento.getX)
-    ali3 = alimento(alimento.getAli, alimento.getX)
-    aliJoker = classe(alimento.getAli, alimento.getX)
-    return ali, ali2, ali3, aliJoker #retornar lista de alimentos
+        if chances == 0 or all(food.nome == 'del' for food in foods):
+            break
+
+def getNFoods(n, joker):
+    foods = []
+    for i in range(1,n):
+        foods.append(alimento(alimento.getAli, alimento.getX))
+    foods.append(joker(alimento.getAli, alimento.getX))
+    return foods
 
 def gameDisplay():
     global question
@@ -306,28 +289,27 @@ def gameDisplay():
                 quit()
 
         if theme == 'Construtores':
-            ali, ali2, ali3, aliJoker = get4Alis(alimento.construtores) #colocar a função em uma lista ao invés de 4 variáveis
+            foods = getNFoods(4, alimento.construtores) #colocar a função em uma lista ao invés de 4 variáveis
             question, answer = alimento.getQuestion('construPerg', 'construResp')
         elif theme == 'Reguladores':
-            ali, ali2, ali3, aliJoker = get4Alis(alimento.reguladores)
+            foods = getNFoods(4, alimento.reguladores)
             question, answer = alimento.getQuestion('reguPerg', 'reguResp')
         elif theme == 'Energeticos':
-            ali, ali2, ali3, aliJoker = get4Alis(alimento.energeticos)
+            foods = getNFoods(4, alimento.energeticos)
             question, answer = alimento.getQuestion('energPerg', 'energResp')
 
         for i in range(0,5): #fazer uma lista com as posições sorteadas (alimenyo[0].x) e apenas um while para sortear novas posições se a nova posição estiver na lista
-            while (ali.x + ali.w) >= ali2.x and ali.x <= (ali2.x + ali2.w)  or (ali.x + ali.w) >= ali3.x and ali.x <= (ali3.x + ali3.w) or (ali.x + ali.w) >= aliJoker.x and ali.x <= (aliJoker.x + aliJoker.w):
-                ali.x = alimento.getX()
-            while (ali2.x + ali2.w) >= ali3.x and ali2.x <= (ali3.x + ali3.w) or (ali2.x + ali2.w) >= aliJoker.x and ali2.x <= (aliJoker.x + aliJoker.w):
-                ali2.x = alimento.getX()
-            while(ali3.x + ali3.w) >= aliJoker.x and ali3.x <= (aliJoker.x + aliJoker.w):
-                ali3.x = alimento.getX()
+            while (foods[0].x + foods[0].w) >= foods[1].x and foods[0].x <= (foods[1].x + foods[1].w)  or (foods[0].x + foods[0].w) >= foods[2].x and foods[0].x <= (foods[2].x + foods[2].w) or (foods[0].x + foods[0].w) >= foods[3].x and foods[0].x <= (foods[3].x + foods[3].w):
+                foods[0].x = alimento.getX()
+            while (foods[1].x + foods[1].w) >= foods[2].x and foods[1].x <= (foods[2].x + foods[2].w) or (foods[1].x + foods[1].w) >= foods[3].x and foods[1].x <= (foods[3].x + foods[3].w):
+                foods[1].x = alimento.getX()
+            while(foods[2].x + foods[2].w) >= foods[3].x and foods[2].x <= (foods[3].x + foods[3].w):
+                foods[2].x = alimento.getX()
 
-        fallingImg(ali.nome, ali.x, ali.img, ali2.nome, ali2.x, ali2.img, ali3.nome, ali3.x, ali3.img, aliJoker.nome, aliJoker.x, aliJoker.img) #alimento[0].nome etc
+        fallingImg(foods) #alimento[0].nome etc
         if chances == 0:
             gameOver()
             break
-
         pygame.display.update()
 
 if __name__ == '__main__':
