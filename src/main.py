@@ -1,6 +1,7 @@
 import pygame
 import random
-from alimento import alimento
+from ali import *
+from inputBox import inputBox
 
 pygame.init()
 
@@ -61,50 +62,33 @@ def button(msg, x, y, w, h, action=None):
 def gameName():
     global name
     global rank
-    inputBox = pygame.Rect(disWidth/2 -70, disHeight/2 +16, 140, 32)
-    colorInactive = (220,220,220)
-    colorActive = (211,211,211)
-    color = colorInactive
-    active = False
-    text = 'Name:'
+    clock = pygame.time.Clock()
+    iB1 = inputBox(disWidth/2-70,disHeight/2+16,140,32,15,pygame.K_SPACE, 'Name:')
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if inputBox.collidepoint(event.pos):
-                    active = not active
-                    color = colorActive
-                else:
-                    active = False
-                    color = colorInactive
-            if event.type == pygame.KEYDOWN:
-                if active:
-                    if text == 'Name:':
-                        text = ''
-                    if event.key == pygame.K_BACKSPACE:
-                        text = text[:-1]
-                    else:
-                        if len(text) <= 15:
-                            if event.key != pygame.K_SPACE and event.key != pygame.K_RETURN:
-                                text += event.unicode
+
+            text = iB1.handleEvent(event)
+
+
+        win.fill((192,192,192))
         if text != 'Name:':
             name = text
-        win.fill((192,192,192))
 
         largeText = pygame.font.SysFont("comicsansms", 90)
         titleSurf, titleRect = textObjects("A FOOD GAME", largeText)
         titleRect.center = (disWidth/2, (disHeight/4)-25)
         win.blit(titleSurf, titleRect)
 
-        textSurf, textRect = textObjects(text, globalFont)
-        pygame.draw.rect(win, color, inputBox)
-        win.blit(textSurf, (inputBox.x+5, inputBox.y+5))
+        iB1.draw(win)
 
         start = button("START", (disWidth+200)/2, (disHeight - 155), 100, 50, gameIntro if name != '' else None)
         ranking = button("RANKING", (disWidth-400)/2, (disHeight - 155), 100, 50, gameRanking)
+
         pygame.display.update()
+        clock.tick(30)
 
         if start == True or ranking == True:
             break
@@ -217,22 +201,10 @@ def gameOver():
 
         pygame.display.update()
 
-def foodClicked(nome, x, img, w, h):
-    global pontos
-    global chances
-    pos = pygame.mouse.get_pos()
-    if (x + 64) >= pos[0] and pos[0] >= x and (y + 64) >= pos[1] and pos[1] >= y: #se o mouse esta dentro da imagem
-        alpha = 1
-        img.fill((1, 1, 1, alpha), None, 0)
-        if nome in answer:
-            pontos += 100
-        elif nome != 'del':
-            chances -= 1
-        return True
-    return False
-
 def fallingImg(foods):
     global y
+    global pontos
+    global chances
     for y in range(110, 480, vel):
         for ev in pygame.event.get():
             if ev.type == pygame.QUIT:
@@ -240,7 +212,7 @@ def fallingImg(foods):
                 quit()
             if ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1:
                 for food in foods:
-                    click = foodClicked(food.nome, food.x, food.img, food.w, food.h)
+                    click, pontos, chances = food.foodClicked(answer,pontos,chances,y)
                     if click == True:
                         food.nome = 'del'
 
@@ -262,7 +234,7 @@ def fallingImg(foods):
         win.blit(chancesSurf, chancesRect)
 
         for food in foods:
-            alimento.draw(win, food.img, food.x, y, 64)
+            food.draw(win, y)
 
         pygame.time.delay(10)
         pygame.display.update()
@@ -289,13 +261,13 @@ def gameDisplay():
                 quit()
 
         if theme == 'Construtores':
-            foods = getNFoods(4, alimento.construtores) #colocar a função em uma lista ao invés de 4 variáveis
+            foods = getNFoods(4, construtores) #colocar a função em uma lista ao invés de 4 variáveis
             question, answer = alimento.getQuestion('construPerg', 'construResp')
         elif theme == 'Reguladores':
-            foods = getNFoods(4, alimento.reguladores)
+            foods = getNFoods(4, reguladores)
             question, answer = alimento.getQuestion('reguPerg', 'reguResp')
         elif theme == 'Energeticos':
-            foods = getNFoods(4, alimento.energeticos)
+            foods = getNFoods(4, energeticos)
             question, answer = alimento.getQuestion('energPerg', 'energResp')
 
         alimento.checkX(foods)
