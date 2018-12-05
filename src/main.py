@@ -27,22 +27,19 @@ def textObjects(text, font, color=(0,0,0)): #creates text Objects
     textSurface = font.render(text, True, color)
     return textSurface, textSurface.get_rect()
 
-def getTheme(): #gets a random theme of 3 possible themes and a respective question/answer for the first round
+def getTheme(): #gets a random theme of 3 possible themes 
     global question
     global answer
     global theme
     r = random.randint(1,3)
     if r == 1:
         theme = "Protein"
-        question, answer = food.getQuestion('proteinQuest', 'proteinAnswer')
     elif r == 2:
         theme = "Vitamin"
-        question, answer = food.getQuestion('vitaminQuest', 'vitaminAnswer')
     else:
         theme = "Carbs"
-        question, answer = food.getQuestion('carbsQuest', 'carbsAnswer')
 
-def button(msg, x, y, w, h, action=None): #create a button on the screen that makes an action when pressed
+def button(msg, x, y, w, h, action=None): #creates a button on the screen that makes an action when pressed
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
     isClicked = False
