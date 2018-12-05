@@ -4,10 +4,10 @@ import time
 
 class food(object):
 
-    def __init__(self, name, x, w=64, h=64):
+    def __init__(self, w=64, h=64):
         self.list = [['banana', pygame.image.load('images/banana.png')], ['carrot', pygame.image.load('images/carrot.png')], ['egg', pygame.image.load('images/egg.png')], ['chicken', pygame.image.load('images/chicken.png')], ['bread', pygame.image.load('images/bread.png')], ['ale', pygame.image.load('images/ale.png')], ['soda', pygame.image.load('images/soda.png')], ['milk', pygame.image.load('images/milk.png')], ['salad', pygame.image.load('images/salad.png')], ['chocolate', pygame.image.load('images/chocolate.png')], ['cereal', pygame.image.load('images/cereal.png')], ['peanut', pygame.image.load('images/peanut.png')], ['hazelnut', pygame.image.load('images/hazelnut.png')], ['oliveOil', pygame.image.load('images/oliveOil.png')], ['potato', pygame.image.load('images/potato.png')], ['eggplant', pygame.image.load('images/eggplant.png')], ['steaks', pygame.image.load('images/steak.png')], ['onion', pygame.image.load('images/onion.png')], ['flour', pygame.image.load('images/flour.png')], ['bean', pygame.image.load('images/bean.png')], ['orange', pygame.image.load('images/orange.png')], ['lemon', pygame.image.load('images/lemon.png')], ['apple', pygame.image.load('images/apple.png')], ['butter', pygame.image.load('images/butter.png')], ['nut', pygame.image.load('images/nut.png')], ['fish', pygame.image.load('images/fish.png')], ['pepper', pygame.image.load('images/pepper.png')], ['cheese', pygame.image.load('images/cheese.png')], ['grape', pygame.image.load('images/grape.png')]]
-        self.name, self.img = name(self.list)
-        self.x = x()
+        self.name, self.img = food.getFood(self.list)
+        self.x = food.getX()
         self.w = w
         self.h = h
 
@@ -66,28 +66,28 @@ class food(object):
 
 class protein(food):
 
-    def __init__(self, name, x, w=64, h=64):
+    def __init__(self, w=64, h=64):
         self.list = [['egg', pygame.image.load('images/egg.png')], ['milk', pygame.image.load('images/milk.png')], ['chicken', pygame.image.load('images/chicken.png')], ['peanut', pygame.image.load('images/peanut.png')], ['hazelnut', pygame.image.load('images/hazelnut.png')], ['steaks', pygame.image.load('images/steak.png')], ['bean', pygame.image.load('images/bean.png')], ['nut', pygame.image.load('images/nut.png')], ['fish', pygame.image.load('images/fish.png')], ['cheese', pygame.image.load('images/cheese.png')]]
-        self.name, self.img = name(self.list)
-        self.x = x()
+        self.name, self.img = food.getFood(self.list)
+        self.x = food.getX()
         self.w = w
         self.h = h
 
 
 class vitamin(food):
 
-    def __init__(self, name, x, w=64, h=64):
+    def __init__(self, w=64, h=64):
         self.list = [['salad', pygame.image.load('images/salad.png')], ['banana', pygame.image.load('images/banana.png')], ['carrot', pygame.image.load('images/carrot.png')], ['eggplant', pygame.image.load('images/eggplant.png')], ['onion', pygame.image.load('images/onion.png')], ['orange', pygame.image.load('images/orange.png')], ['lemon', pygame.image.load('images/lemon.png')], ['apple', pygame.image.load('images/apple.png')], ['pepper', pygame.image.load('images/pepper.png')], ['grape', pygame.image.load('images/grape.png')]]
-        self.name, self.img = name(self.list)
-        self.x = x()
+        self.name, self.img = food.getFood(self.list)
+        self.x = food.getX()
         self.w = w
         self.h = h
 
 class carbs(food):
 
-    def __init__(self, name, x, w=64, h=64):
+    def __init__(self, w=64, h=64):
         self.list = [['bread', pygame.image.load('images/bread.png')], ['ale', pygame.image.load('images/ale.png')], ['soda', pygame.image.load('images/soda.png')], ['cereal', pygame.image.load('images/cereal.png')], ['chocolate', pygame.image.load('images/chocolate.png')], ['oliveOil', pygame.image.load('images/oliveOil.png')], ['potato', pygame.image.load('images/potato.png')], ['flour', pygame.image.load('images/flour.png')], ['butter', pygame.image.load('images/butter.png')]]
-        self.name, self.img = name(self.list)
-        self.x = x()
+        self.name, self.img = food.getFood(self.list)
+        self.x = food.getX()
         self.w = w
         self.h = h

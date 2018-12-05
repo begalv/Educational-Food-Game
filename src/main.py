@@ -27,7 +27,7 @@ def textObjects(text, font, color=(0,0,0)): #creates text Objects
     textSurface = font.render(text, True, color)
     return textSurface, textSurface.get_rect()
 
-def getTheme(): #gets a random theme of 3 possible themes 
+def getTheme(): #gets a random theme of 3 possible themes
     global question
     global answer
     global theme
@@ -145,7 +145,7 @@ def gameRanking(): #displays a table on screen with the ranking data
         win.blit(strgNameSurf, strgNameRect)
         win.blit(strgThemeSurf, strgThemeRect)
 
-        back = button("BACK", (disWidth/2)-70, 400, 100, 50, gameIntro)
+        back = button("BACK", (disWidth/2)-65, 400, 100, 50, gameIntro)
 
         pygame.display.update()
 
@@ -268,8 +268,8 @@ def gameDisplay(foods): #checks if each current food object is clicked and displ
 def getNFoods(n, joker): #gets n food objects including a joker (type of food that is the right answer for the current question) and stores them on a list
     foods = []
     for i in range(1,n):
-        foods.append(food(food.getFood, food.getX))
-    foods.append(joker(food.getFood, food.getX))
+        foods.append(food())
+    foods.append(joker())
     return foods
 
 def gameManager(): #calls the getNFoods function according to drawed theme and the questions/answers for each round of the game. Also calls a funcion that checks if any food's x are the same
