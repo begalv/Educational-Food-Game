@@ -1,0 +1,10 @@
+orange;lemon;apple;grape;pepper
+milk;cheese;bean;banana;peanut
+onion;orange;apple;potato;lemon 
+orange,lemon,apple;onion;salad
+eggplant;egg;grape
+carrot;salad;butter
+orange;lemon;apple;grape;banana;onion;eggplant;carrot;pepper;salad
+orange;lemon;apple;grape;banana;onion;eggplant;carrot;pepper;salad;cereal
+fish;nut;carrot;orange;lemon;bean;peanut;hazelnut
+pepper;nut;hazelnut;peanut;salad;orange;lemon

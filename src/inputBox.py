@@ -33,7 +33,7 @@ class inputBox:
                 if event.key == pygame.K_BACKSPACE:
                     self.text = self.text[:-1]
                 else:
-                    if len(self.text) <= self.len:
+                    if len(self.text) < self.len:
                         if event.key != self.forbiddenKey and event.key != pygame.K_RETURN:
                             self.text += event.unicode
                 self.textSurf = FONT.render(self.text, True, (0,0,0))

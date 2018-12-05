@@ -1,0 +1,10 @@
+nut;bean;hazelnut;peanut
+steak;fish;chicken;egg;milk;cheese
+nut;bean;hazelnut;peanut 
+nut;bean;hazelnut;steak;fish;chicken;egg;milk;cheese;peanut
+nut;bean;hazelnut;steak;fish;chicken;egg;milk;cheese;peanut
+nut;bean;hazelnut;steak;fish;chicken;egg;milk;cheese;peanut
+steak;chicken;bread;potato;banana;cereal
+steak;fish;butter
+steak;milk;egg;chicken;banana;salad
+steak;milk;egg;chicken;banana;salad;nut

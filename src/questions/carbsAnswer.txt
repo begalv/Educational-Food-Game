@@ -1,0 +1,10 @@
+bread;potato;ale;cereal;chocolate;soda
+bread;potato;ale;cereal;butter;oliveOil;chocolate;soda;flour
+bread;potato;cereal;chocolate;soda
+chocolate;soda;cereal
+carrot;oliveOil;orange;lemon;apple;fish;salad
+bread;potato;cereal;soda;chocolate;flour
+bread;potato;cereal;soda;chocolate
+soda;chocolate
+butter;grape
+orange;lemon;carrot;oliveOil;nut;grape;eggplant;butter
