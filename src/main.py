@@ -27,7 +27,7 @@ def textObjects(text, font, color=(0,0,0)): #create text Objects
     textSurface = font.render(text, True, color)
     return textSurface, textSurface.get_rect()
 
-def getTheme(): #get a random theme of 3 possible themes and a respective question/answer for the first round
+def getTheme(): #gets a random theme of 3 possible themes and a respective question/answer for the first round
     global question
     global answer
     global theme
