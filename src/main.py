@@ -23,7 +23,7 @@ chances = 3
 rank = ''
 name = ''
 
-def textObjects(text, font, color=(0,0,0)): #create text Objects
+def textObjects(text, font, color=(0,0,0)): #creates text Objects
     textSurface = font.render(text, True, color)
     return textSurface, textSurface.get_rect()
 
