@@ -1,1 +1,1 @@
-# Educational Food Game (Computer Science first semester project)
+# Educational Food Game 
