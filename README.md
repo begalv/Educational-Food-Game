@@ -1,1 +1,1 @@
-# Educational-Food-Game
+# Educational-Food-Game (first semester project)
