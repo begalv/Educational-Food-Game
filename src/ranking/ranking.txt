@@ -1,3 +1,6 @@
 200;d;Carbs
 500;s;Vitamin
 200;a;Protein
+200;asd;Protein
+0;asd;Carbs
+0;asd;Protein
