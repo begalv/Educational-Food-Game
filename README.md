@@ -1,4 +1,4 @@
-# Educational Food Game 
+# Educational Food Game Project
 The project consists on the development of an educational game about healthy eating habits. Underestimated in the present day, nutrition and eating habits have a great influence on the daily life of each one, affecting not only the physical part of the body, but also the mental and cognitive part.
 
 Recent studies indicate that food and digestion have direct relations with the functioning of the brain, bringing consequences for its development and growth. A good eating habit brings balance to the neurons's chemical transmitters, known as neurotransmitters. This balance governs not only the mood, but also the regulation of sleep, attention and weight.
