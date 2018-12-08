@@ -10,14 +10,14 @@ pygame.display.set_caption("A Food Game")
 disWidth = 720
 disHeight = 480
 
+globalFont = pygame.font.SysFont("freesansbold.ft", 20)
+vel = 1
 
 #global variables
-globalFont = pygame.font.SysFont("freesansbold.ft", 20)
 theme = ""
 question = ""
 answer = []
 y = 120
-vel = 1
 points = 0
 chances = 3
 rank = ''
@@ -61,7 +61,6 @@ def button(msg, x, y, w, h, action=None): #creates a button on the screen that m
 
 def gameIntro(): #first screen of the game. Contains the player's name input box and two buttons, one for start the game and one for access the ranking screen
     global name
-    global rank
     iB1 = inputBox(disWidth/2-70,disHeight/2+16,140,32,10,pygame.K_SPACE, 'Name:')
     text = ''
     while True:
