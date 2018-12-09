@@ -28,7 +28,7 @@ def textObjects(text, font, color=(0,0,0)): #creates text Objects
     return textSurface, textSurface.get_rect()
 
 def getTheme(): #gets a random theme of 3 possible themes
-    global question
+    global theme
     r = random.randint(1,3)
     if r == 1:
         theme = "Protein"
