@@ -5,6 +5,8 @@ Recent studies indicate that food and digestion have direct relations with the f
 
 Thus, knowledge of good nutrition can bring lasting benefits to our health by combating disorders such as obesity, insomnia, and ADHD (Attention Deficit Hyperactivity Disorder), as well as improving the productivity of alredy healthy people through a better cognitive functioning.
 
+Gameplay Video: https://www.youtube.com/watch?v=odDpHNMkbbo
+
 **obs: This project was developed by a first-semester student of computer science**
 _______________________________________
 
