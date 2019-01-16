@@ -7,3 +7,5 @@ Thus, knowledge of good nutrition can bring lasting benefits to our health by co
 
 **obs: This project was developed by a first-semester student of computer science**
 _______________________________________
+
+![Alt](https://github.com/begalv/Educational-Food-Game/blob/master/docs/images/gameDisplay.png)
