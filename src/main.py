@@ -27,18 +27,6 @@ def textObjects(text, font, color=(0,0,0)): #creates text Objects
     textSurface = font.render(text, True, color)
     return textSurface, textSurface.get_rect()
 
-def getTheme(): #gets a random theme of 3 possible themes
-    global question
-    global answer
-    global theme
-    r = random.randint(1,3)
-    if r == 1:
-        theme = "Protein"
-    elif r == 2:
-        theme = "Vitamin"
-    else:
-        theme = "Carbs"
-
 def button(msg, x, y, w, h, action=None): #creates a button on the screen that makes an action when pressed
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
@@ -148,6 +136,18 @@ def gameRanking(): #displays a table on screen with the ranking data
         back = button("BACK", (disWidth/2)-65, 400, 100, 50, gameIntro)
 
         pygame.display.update()
+
+def getTheme(): #gets a random theme of 3 possible themes
+    global question
+    global answer
+    global theme
+    r = random.randint(1,3)
+    if r == 1:
+        theme = "Protein"
+    elif r == 2:
+        theme = "Vitamin"
+    else:
+        theme = "Carbs"
 
 def preGame(): #screen with a button to call getTheme function and display the theme
     global theme
