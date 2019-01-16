@@ -35,7 +35,7 @@ In this screen the player can see the question chosen randomly at the top of the
 - **GameOver Screen**
 When all chances are over, the match ends and the game over screen pops up. In it the player can see their final score and chooses to play again or leave the game. When the first choice is picked, the player goes to Pre-game screen, and, when the latter is picked, the player goes to the first screen, where the ranking button is available. 
 
-![Alt](http://github.com/begalv/Educational-Food-Game/blob/master/docs/images/gameOver.png) <br/>
+![Alt](https://github.com/begalv/Educational-Food-Game/blob/master/docs/images/gameOver.png) <br/>
 <br/>
 <br/>
 
