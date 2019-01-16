@@ -27,8 +27,6 @@ def textObjects(text, font, color=(0,0,0)): #creates text Objects
     textSurface = font.render(text, True, color)
     return textSurface, textSurface.get_rect()
 
-<<<<<<< HEAD
-=======
 def getTheme(): #gets a random theme of 3 possible themes
     global theme
     r = random.randint(1,3)
@@ -39,7 +37,6 @@ def getTheme(): #gets a random theme of 3 possible themes
     else:
         theme = "Carbs"
 
->>>>>>> c95c32fa2d30a75ee256b4466b8282d69c9a49ed
 def button(msg, x, y, w, h, action=None): #creates a button on the screen that makes an action when pressed
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
