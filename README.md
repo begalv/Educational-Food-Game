@@ -1,6 +1,4 @@
 # Educational Food Game Project
-Software project developed in Python language for Mackenzie Presbyterian Institute to teach nutrition and food science to Elementary School students through a virtual educational game, following the concepts of serious games.
-
 Recent studies indicate that food and digestion have direct relations with the brain's functioning, bringing consequences for its development and growth. A good eating habit brings balance to neurotransmitters. This balance governs not only the mood, but also the regulation of sleep, attention and weight.
 
 Thus, knowledge of good nutrition can bring lasting benefits to one's health by combating disorders such as obesity, insomnia, and ADHD (Attention Deficit Hyperactivity Disorder), as well as improving the productivity of alredy healthy people through a better cognitive functioning.
